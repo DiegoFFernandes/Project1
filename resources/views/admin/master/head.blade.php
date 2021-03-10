@@ -38,6 +38,7 @@
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 
     <!-- Template Main CSS File -->
-    <link href="{{asset ('css/style.css') }}" rel="stylesheet">
+    <link href="{{asset ('css/styleAdmin.css') }}" rel="stylesheet">
+    
     
 </head>

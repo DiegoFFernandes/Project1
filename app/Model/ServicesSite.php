@@ -9,6 +9,7 @@ class ServicesSite extends Model
    protected $fillable = [
       'title_services',
       'description',
+      'position_site',
       'img',
    ];
 

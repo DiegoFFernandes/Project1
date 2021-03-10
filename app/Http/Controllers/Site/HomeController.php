@@ -11,8 +11,8 @@ class HomeController extends Controller
 
     public function services()
     {
-        $services = ServicesSite::all();
+        $servicesResumo = ServicesSite::where('position_site', 1)->get();
         //dd($services[0]);
-        return view('site/home', compact('services'));
+        return view('site/home', compact('servicesResumo'));
     }
 }

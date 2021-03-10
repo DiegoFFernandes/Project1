@@ -15,6 +15,7 @@ class CreateServicesSitesTable extends Migration
  {
   Schema::create('services_sites', function (Blueprint $table) {
    $table->increments('id');
+   $table->integer('position_site');
    $table->string('title_services', 20)->nullable();
    $table->string('description', 400)->nullable();
    $table->timestamps();

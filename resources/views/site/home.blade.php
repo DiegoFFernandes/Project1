@@ -46,12 +46,12 @@
     <section class="services">
         <div class="container">
             <div class="row">
-            @foreach($services as $key => $service)
+            @foreach($servicesResumo as $key => $serviceResumo)
                 <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up">
                     <div class="icon-box icon-box-green">
                         <div class="icon"><img src="{{asset ('img/'.$key .'.png')}}" class="img-fluid" alt=""></div>
-                        <h4 class="title"><a href="">{{ $service->title_services}}</a></h4>
-                        {!! html_entity_decode($service->description) !!}
+                        <h4 class="title"><a href="">{{ $serviceResumo->title_services}}</a></h4>
+                        {!! html_entity_decode($serviceResumo->description) !!}
                     </div>
                 </div>
             @endforeach

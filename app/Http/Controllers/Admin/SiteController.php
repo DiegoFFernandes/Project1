@@ -31,9 +31,9 @@ class SiteController extends Controller
   $uri      = $this->resposta->route()->uri();
   $exploder = explode('/', $uri);
   $uriAtual = ucfirst($exploder[1]);
-  $services = ServicesSite::all();
-
-  return view('admin.services-list', compact('user', 'uriAtual', 'services'));
+  $servicesResumo = ServicesSite::where('position_site',1)->get();
+  $servicesOurServices = ServicesSite::where('position_site',2)->get();
+  return view('admin.services-list', compact('user', 'uriAtual', 'servicesResumo','servicesOurServices'));
  }
 
  /**

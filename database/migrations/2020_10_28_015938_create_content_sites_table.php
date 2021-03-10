@@ -13,6 +13,7 @@ class CreateContentSitesTable extends Migration
   */
  public function up()
  {
+  Schema::dropIfExists('content_sites');
   Schema::create('content_sites', function (Blueprint $table) {
    $table->increments('id_content');
    $table->string('session', 20);
