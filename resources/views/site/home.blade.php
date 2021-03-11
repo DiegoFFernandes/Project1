@@ -64,8 +64,8 @@
         <div class="container">
 
             <div class="section-title">
-                <h2>Nossos Serviços</h2>
-                <p>Se destacando com o que a de melhor do mercado, conheça um pouco de nossos serviços.</p>
+                <h2>{{ $services[0]->title_services }}</h2>
+                <p>{{ $services[0]->description  }}</p>
             </div>
 
             <div class="row" data-aos="fade-up">
@@ -73,18 +73,14 @@
                     <img src="{{asset ('img/icons_candle.png')}}" class="img-fluid" alt="">
                 </div>
                 <div class="col-md-7 pt-4">
-                    <h3>Funerária</h3>
+                    <h3>{{ $services[1]->title_services }}</h3>
                     <p class="font-italic">
-                        Estamos localizados na região metropolitana de Curitiba e agora também atendendo o Vale do Ivai,
-                        com nossa sede na cidade de Ivaiporã;
+                    {{ $services[1]->description}}
                     </p>
                     <ul>
-                        <li><i class="icofont-check"></i>Araucária – PR</li>
-                        <li><i class="icofont-check"></i>Fazenda Rio Grande – PR</li>
-                        <li><i class="icofont-check"></i>Itaperuçu – PR</li>
-                        <li><i class="icofont-check"></i>Ivaiporã – PR</li>
-                        <li><i class="icofont-check"></i>Pinhas – PR</li>
-                        <li><i class="icofont-check"></i>Rio Branco do Sul – PR</li>
+                        @foreach($itemservices as $key => $item)
+                        <li><i class="icofont-check"></i>{{$item->description}}</li>
+                        @endforeach
                     </ul>
                     <div class="mob-services">
                         <a href="{{route('site.about-us')}}" class="btn btn-green animated fadeInUp">Saiba Mais</a>
