@@ -75,11 +75,21 @@
                         </tr>
                         @foreach($servicesOurServices as $serviceOurServices)
                         <tr>
-                            <td>{{ $serviceOurServices->id }}</td>
+                            <th>{{ $serviceOurServices->id }}</td>
                             <td>{{ $serviceOurServices->title_services }}</td>
                             <td>{!!  html_entity_decode($serviceOurServices->description) !!}</td>
                             <td><a href="servicos/{{$serviceOurServices->id}}/edit"><span class="glyphicon glyphicon-pencil"></span></a></td>
                         </tr>
+                            @foreach($itemServicesSite as $itemServiceSite)
+                                @if($serviceOurServices->id == $itemServiceSite->id_itemservices)
+                                <tr>
+                                    <td></td>
+                                    <td><span class="glyphicon glyphicon-ok"></span></td>
+                                    <td>{{ $itemServiceSite->description}}</td>
+                                    <td><a href=""><span class="glyphicon glyphicon-pencil"></span></a></td>
+                                </tr>
+                                @endif
+                            @endforeach
                         @endforeach
                     </table>
                 </div>

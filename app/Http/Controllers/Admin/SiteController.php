@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Model\ItemServicesSite;
 use App\Model\ServicesSite;
 use App\User;
 use Illuminate\Http\Request;
@@ -33,7 +34,12 @@ class SiteController extends Controller
   $uriAtual = ucfirst($exploder[1]);
   $servicesResumo = ServicesSite::where('position_site',1)->get();
   $servicesOurServices = ServicesSite::where('position_site',2)->get();
-  return view('admin.services-list', compact('user', 'uriAtual', 'servicesResumo','servicesOurServices'));
+  $itemServicesSite = ItemServicesSite::select('id_itemservices','description')->get();
+
+  //dd($itemServicesSite);
+
+  return view('admin.services-list', compact(
+      'user', 'uriAtual', 'servicesResumo','servicesOurServices', 'itemServicesSite'));
  }
 
  /**

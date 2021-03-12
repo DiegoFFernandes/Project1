@@ -53,4 +53,5 @@ Route::group(['namespace' => 'Auth'], function () {
 
 Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth'], function () {
  Route::resource('servicos', 'SiteController'); 
+ Route::resource('item_servicos', 'ItemServicesController'); 
 });
